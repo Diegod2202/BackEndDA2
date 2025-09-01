@@ -1,0 +1,108 @@
+{
+  "info": {
+    "name": "backup-da2 API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Usuarios",
+      "item": [
+        {
+          "name": "Crear usuario",
+          "request": {
+            "method": "POST",
+            "header": [{"key": "Content-Type", "value": "application/json"}],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"evento\": \"usuario_creado\",\n  \"nombre\": \"Pedro\",\n  \"pais\": \"Argentina\",\n  \"fechaRegistro\": \"2025-08-31\"\n}"
+            },
+            "url": {"raw": "http://localhost:3000/api/usuarios/evento", "protocol": "http", "host": ["localhost"], "port": "3000", "path": ["api","usuarios","evento"]}
+          }
+        },
+        {
+          "name": "Listar usuarios",
+          "request": {"method": "GET", "url": {"raw": "http://localhost:3000/api/usuarios", "protocol": "http", "host": ["localhost"], "port": "3000", "path": ["api","usuarios"]}}
+        }
+      ]
+    },
+    {
+      "name": "Películas",
+      "item": [
+        {
+          "name": "Crear película",
+          "request": {
+            "method": "POST",
+            "header": [{"key": "Content-Type", "value": "application/json"}],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"evento\": \"pelicula_creada\",\n  \"titulo\": \"Avatar\",\n  \"genero\": \"Aventura\",\n  \"duracion\": 120,\n  \"fechaEstreno\": \"2022-01-01\",\n  \"plataformas\": \"Netflix\"\n}"
+            },
+            "url": {"raw": "http://localhost:3000/api/peliculas/evento", "protocol": "http", "host": ["localhost"], "port": "3000", "path": ["api","peliculas","evento"]}
+          }
+        },
+        {
+          "name": "Listar películas",
+          "request": {"method": "GET", "url": {"raw": "http://localhost:3000/api/peliculas", "protocol": "http", "host": ["localhost"], "port": "3000", "path": ["api","peliculas"]}}
+        },
+        {
+          "name": "Obtener película por ID",
+          "request": {"method": "GET", "url": {"raw": "http://localhost:3000/api/peliculas/1", "protocol": "http", "host": ["localhost"], "port": "3000", "path": ["api","peliculas","1"]}}
+        }
+      ]
+    },
+    {
+      "name": "Reviews",
+      "item": [
+        {
+          "name": "Crear review",
+          "request": {
+            "method": "POST",
+            "header": [{"key": "Content-Type", "value": "application/json"}],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"evento\": \"review_creada\",\n  \"idUsuario\": 1,\n  \"idPelicula\": 1,\n  \"calificacion\": 5,\n  \"comentario\": \"Excelente película\",\n  \"fecha\": \"2025-08-31\"\n}"
+            },
+            "url": {"raw": "http://localhost:3000/api/reviews/evento", "protocol": "http", "host": ["localhost"], "port": "3000", "path": ["api","reviews","evento"]}
+          }
+        },
+        {
+          "name": "Listar reviews",
+          "request": {"method": "GET", "url": {"raw": "http://localhost:3000/api/reviews", "protocol": "http", "host": ["localhost"], "port": "3000", "path": ["api","reviews"]}}
+        },
+        {
+          "name": "Reviews de película",
+          "request": {"method": "GET", "url": {"raw": "http://localhost:3000/api/reviews/pelicula/1", "protocol": "http", "host": ["localhost"], "port": "3000", "path": ["api","reviews","pelicula","1"]}}
+        },
+        {
+          "name": "Calificación promedio",
+          "request": {"method": "GET", "url": {"raw": "http://localhost:3000/api/reviews/calificacion-promedio/1", "protocol": "http", "host": ["localhost"], "port": "3000", "path": ["api","reviews","calificacion-promedio","1"]}}
+        }
+      ]
+    },
+    {
+      "name": "Analytics",
+      "item": [
+        {
+          "name": "Dashboard",
+          "request": {"method": "GET", "url": {"raw": "http://localhost:3000/api/analytics/dashboard", "protocol": "http", "host": ["localhost"], "port": "3000", "path": ["api","analytics","dashboard"]}}
+        },
+        {
+          "name": "Usuarios activos",
+          "request": {"method": "GET", "url": {"raw": "http://localhost:3000/api/analytics/usuarios-activos", "protocol": "http", "host": ["localhost"], "port": "3000", "path": ["api","analytics","usuarios-activos"]}}
+        },
+        {
+          "name": "Tasa de conversión",
+          "request": {"method": "GET", "url": {"raw": "http://localhost:3000/api/analytics/tasa-conversion", "protocol": "http", "host": ["localhost"], "port": "3000", "path": ["api","analytics","tasa-conversion"]}}
+        },
+        {
+          "name": "Películas por género",
+          "request": {"method": "GET", "url": {"raw": "http://localhost:3000/api/analytics/peliculas-genero", "protocol": "http", "host": ["localhost"], "port": "3000", "path": ["api","analytics","peliculas-genero"]}}
+        },
+        {
+          "name": "Crecimiento semanal",
+          "request": {"method": "GET", "url": {"raw": "http://localhost:3000/api/analytics/crecimiento-semanal", "protocol": "http", "host": ["localhost"], "port": "3000", "path": ["api","analytics","crecimiento-semanal"]}}
+        }
+      ]
+    }
+  ]
+}

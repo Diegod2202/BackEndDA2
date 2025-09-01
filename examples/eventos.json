@@ -1,0 +1,89 @@
+{
+  "eventos_usuarios": [
+    {
+      "evento": "usuario_creado",
+      "idUsuario": "u123",
+      "nombre": "Juan Pérez",
+      "pais": "AR",
+      "fechaRegistro": "2025-01-20"
+    },
+    {
+      "evento": "usuario_creado",
+      "idUsuario": "u456",
+      "nombre": "María García",
+      "pais": "MX",
+      "fechaRegistro": "2025-01-21"
+    },
+    {
+      "evento": "sesion_iniciada",
+      "idUsuario": "u123",
+      "idSesion": "s001",
+      "dispositivo": "desktop",
+      "fechaInicio": "2025-01-23T14:05:00Z"
+    },
+    {
+      "evento": "sesion_finalizada",
+      "idUsuario": "u123",
+      "idSesion": "s001",
+      "fechaFin": "2025-01-23T15:12:00Z"
+    }
+  ],
+  "eventos_peliculas": [
+    {
+      "evento": "pelicula_creada",
+      "idPelicula": "p456",
+      "titulo": "Inception",
+      "genero": ["Sci-Fi", "Thriller"],
+      "duracion": 148,
+      "fechaEstreno": "2010-07-16",
+      "plataformas": ["Netflix", "HBO Max"]
+    },
+    {
+      "evento": "pelicula_creada",
+      "idPelicula": "p789",
+      "titulo": "The Dark Knight",
+      "genero": ["Action", "Crime", "Drama"],
+      "duracion": 152,
+      "fechaEstreno": "2008-07-18",
+      "plataformas": ["Netflix", "Amazon Prime"]
+    },
+    {
+      "evento": "pagina_vista",
+      "idUsuario": "u123",
+      "idSesion": "s001",
+      "pagina": "detalle_pelicula",
+      "idPelicula": "p456",
+      "fecha": "2025-01-23T14:10:32Z"
+    }
+  ],
+  "eventos_reviews": [
+    {
+      "evento": "review_creada",
+      "idReview": "r789",
+      "idUsuario": "u123",
+      "idPelicula": "p456",
+      "calificacion": 4.5,
+      "comentario": "Muy buena, con un giro tremendo al final",
+      "fecha": "2025-01-21"
+    },
+    {
+      "evento": "like_review",
+      "idReview": "r789",
+      "idUsuario": "u456",
+      "fecha": "2025-01-22"
+    },
+    {
+      "evento": "comentario_review",
+      "idReview": "r789",
+      "idUsuario": "u456",
+      "comentario": "Coincido, excelente película",
+      "fecha": "2025-01-22"
+    },
+    {
+      "evento": "follow_usuario",
+      "idSeguidor": "u123",
+      "idSeguido": "u456",
+      "fecha": "2025-01-22"
+    }
+  ]
+} 
