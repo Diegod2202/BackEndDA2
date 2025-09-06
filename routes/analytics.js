@@ -290,12 +290,13 @@ router.get('/peliculas-genero', async (req, res) => {
     const peliculasPorGenero = await Review.findAll({
       attributes: [
         [fn('AVG', col('calificacion')), 'calificacionPromedio'],
-        [fn('COUNT', col('idReview')), 'totalReviews']
+        [fn('COUNT', col('idReview')), 'totalReviews'],
+        [col('pelicula.genero'), 'genero']
       ],
       include: [{
         model: Pelicula,
         as: 'pelicula',
-        attributes: ['genero']
+        attributes: [] // No incluir atributos adicionales, solo el genero en el select principal
       }],
       group: ['pelicula.genero'],
       order: [[fn('AVG', col('calificacion')), 'DESC']]
